@@ -1,7 +1,7 @@
 import React from 'react';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
-import Notification from '../Notification/Notification';
+import Notification from '../Notification';
 import Section from './Section';
 import styled from '@emotion/styled';
 
