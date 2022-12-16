@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from './Section';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const FeedbackBodyDiv = styled.div`
   display: flex;
@@ -31,6 +32,14 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
       </FeedbackBodyDiv>
     </>
   );
+};
+
+Statistics.propTypes = {
+  good: PropTypes.string,
+  neutral: PropTypes.string,
+  bad: PropTypes.string,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.string,
 };
 
 export default Statistics;

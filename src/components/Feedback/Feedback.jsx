@@ -4,6 +4,7 @@ import FeedbackOptions from './FeedbackOptions';
 import Notification from '../Notification';
 import Section from './Section';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const FeedbackDiv = styled.div`
   display: flex;
@@ -46,6 +47,14 @@ const Feedback = ({
       )}
     </FeedbackDiv>
   );
+};
+
+Feedback.propTypes = {
+  onHandleCount: PropTypes.func,
+  currentState: PropTypes.object,
+  totalFunc: PropTypes.func,
+  parcentFunc: PropTypes.func,
+  clearFunc: PropTypes.func,
 };
 
 export default Feedback;

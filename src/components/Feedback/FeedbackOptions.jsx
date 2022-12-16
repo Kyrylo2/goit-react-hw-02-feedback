@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
 const FeedbackButtons = styled.div`
@@ -18,6 +19,11 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       })}
     </FeedbackButtons>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string),
+  onLeaveFeedback: PropTypes.func,
 };
 
 export default FeedbackOptions;
