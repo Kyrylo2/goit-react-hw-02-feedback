@@ -22,29 +22,31 @@ const Feedback = ({
 }) => {
   return (
     <FeedbackDiv>
-      <Section title="Plese leave a feedback" />
+      <Section title="Plese leave a feedback">
+        <FeedbackOptions
+          options={Object.keys(currentState)}
+          onLeaveFeedback={onHandleCount}
+        />
+      </Section>
 
-      <FeedbackOptions
-        options={Object.keys(currentState)}
-        onLeaveFeedback={onHandleCount}
-      />
-
-      {totalFunc() > 0 ? (
-        <>
-          <button type="button" onClick={clearFunc}>
-            Clear Stat
-          </button>
-          <Statistics
-            good={currentState.good}
-            neutral={currentState.neutral}
-            bad={currentState.bad}
-            total={totalFunc()}
-            positivePercentage={parcentFunc()}
-          />
-        </>
-      ) : (
-        <Notification message="There is no feedback" />
-      )}
+      <Section title="Statistics">
+        {totalFunc() > 0 ? (
+          <>
+            <button type="button" onClick={clearFunc}>
+              Clear Stat
+            </button>
+            <Statistics
+              good={currentState.good}
+              neutral={currentState.neutral}
+              bad={currentState.bad}
+              total={totalFunc()}
+              positivePercentage={parcentFunc()}
+            />
+          </>
+        ) : (
+          <Notification message="There is no feedback" />
+        )}
+      </Section>
     </FeedbackDiv>
   );
 };

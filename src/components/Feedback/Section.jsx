@@ -1,8 +1,14 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 
-const Section = ({ title }) => {
-  return <h2>{title}</h2>;
+const Section = ({ title, children }) => {
+  return (
+    <>
+      <h2>{title}</h2>
+      {children}
+    </>
+  );
 };
 
 Section.propTypes = {

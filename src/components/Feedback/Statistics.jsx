@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from './Section';
+// import Section from './Section';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,7 @@ const FeedbackBodyDiv = styled.div`
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <>
-      <Section title="Statistics" />
+      {/* <Section title="Statistics" /> */}
       <FeedbackBodyDiv>
         <div>Good: {good}</div>
         <div>Neutral: {neutral}</div>
@@ -35,11 +35,11 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
 };
 
 Statistics.propTypes = {
-  good: PropTypes.string,
-  neutral: PropTypes.string,
-  bad: PropTypes.string,
-  total: PropTypes.number,
-  positivePercentage: PropTypes.string,
+  good: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  neutral: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  bad: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  total: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  positivePercentage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default Statistics;
